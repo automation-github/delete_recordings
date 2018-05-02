@@ -3,27 +3,15 @@ pipeline {
     stages {
         stage('test_npvr_recording_deletion_5.1') {
             agent any
-            environment {
-                target_cluster = '10.65.182.11'
-                test_name = 'test_npvr_recording_deletion.py'
-            }
             steps {
-                sh '''set +e
-
-ssh root@$target_cluster -t "pytest -r a -v -s /var/Nightswatch/CI_loops/CI_loop25/delete_recordings/$test_name" --junitxml="/tmp/delete_recordings/$test_name.xml"'''
+                build(job: 'test_npvr_recording_deletion_5.1', propagate: false)
             }
         }
 
         stage('test_rsdvr_recording_deletion_5.1') {
             agent any
-            environment {
-                target_cluster = '10.65.182.11'
-                test_name = 'test_rsdvr_recording_deletion.py'
-            }
             steps {
-                sh '''set +e
-
-ssh root@$target_cluster -t "pytest -r a -v -s /var/Nightswatch/CI_loops/CI_loop25/delete_recordings/$test_name" --junitxml="/tmp/delete_recordings/$test_name.xml"'''
+                build(job: 'test_rsdvr_recording_deletion_5.1', propagate: false)
             }
         }
 
