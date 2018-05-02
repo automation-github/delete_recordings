@@ -2,7 +2,7 @@ pipeline {
   agent any
   stages {
     stage('test_npvr_recording_deletion_5.1') {
-      parallel {
+       {
         stage('test_rsdvr_recording_deletion_5.1') {
           steps {
             sh '''set +e
