@@ -20,21 +20,21 @@ pipeline {
     stage('test_npvr_recording_deletion_5.1') {
       agent any
       steps {
-        build (job: 'test_npvr_playout_deletion_5.1', propagate: false)
+        build (job: 'test_npvr_recording_deletion_5.1', propagate: false)
       }
     }
 
     stage('test_rsdvr_playout_deletion_5.1') {
       agent any
       steps {
-        build (job: 'test_npvr_playout_deletion_5.1', propagate: false)
+        build (job: 'test_rsdvr_playout_deletion_5.1', propagate: false)
       }
     }
 
     stage('test_rsdvr_recording_deletion_5.1') {
       agent any
       steps {
-        build (job: 'test_npvr_playout_deletion_5.1', propagate: false)
+        build (job: 'test_rsdvr_recording_deletion_5.1', propagate: false)
       }
     }
 
